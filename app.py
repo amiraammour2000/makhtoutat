@@ -1,4 +1,12 @@
 # app.py
+import sys
+import subprocess
+
+# --- CHIRURGICAL FIX FOR STREAMLIT CLOUD (Headless Server) ---
+# PaddleOCR force l'installation d'OpenCV GUI, ce qui crashe le serveur sans écran.
+# On le désinstalle silencieusement pour forcer l'utilisation de la version "headless".
+subprocess.run([sys.executable, "-m", "pip", "uninstall", "-y", "opencv-python", "opencv-contrib-python"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+# -------------------------------------------------------------
 import streamlit as st
 import xml.dom.minidom
 import os
