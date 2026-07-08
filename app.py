@@ -99,7 +99,7 @@ with mode_choisi[1]:
         pretraitement_actif = st.checkbox("Pré-traitement chirurgical OpenCV (Recommandé)", value=True)
     with col_img2:
         if fichier_uploade: 
-            st.image(fichier_uploade, use_column_width=True, caption="Aperçu du document source")
+            st.image(fichier_uploade, use_container_width=True, caption="Aperçu du document source")
     
     if st.button("Lancer l'OCR et l'Analyse", type="primary", use_container_width=True, disabled=not fichier_uploade):
         try:
